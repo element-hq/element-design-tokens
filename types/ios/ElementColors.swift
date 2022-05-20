@@ -3,10 +3,10 @@ import SwiftUI
 // MARK: SwiftUI
 
 extension Color {
-    public static let element = ElementColorsSwiftUI()
+    public static let element = ElementColors()
 }
 
-public struct ElementColorsSwiftUI {
+public struct ElementColors {
     public var globalAzure: Color { Color("globalAzure", bundle: Bundle.module) }
     public var globalKiwi: Color { Color("globalKiwi", bundle: Bundle.module) }
     public var globalGrape: Color { Color("globalGrape", bundle: Bundle.module) }
@@ -47,10 +47,11 @@ public struct ElementColorsSwiftUI {
 // MARK: UIKit
 
 extension UIColor {
-    public static let element = ElementColorsUIKit()
+    /// The colors from Compound, as dynamic colors that automatically update for light and dark mode.
+    public static let element = ElementUIColors()
 }
 
-public struct ElementColorsUIKit {
+@objcMembers public class ElementUIColors: NSObject {
     public var globalAzure: UIColor { UIColor(named: "globalAzure", in: Bundle.module, compatibleWith: nil)! }
     public var globalKiwi: UIColor { UIColor(named: "globalKiwi", in: Bundle.module, compatibleWith: nil)! }
     public var globalGrape: UIColor { UIColor(named: "globalGrape", in: Bundle.module, compatibleWith: nil)! }

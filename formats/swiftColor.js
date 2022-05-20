@@ -17,10 +17,10 @@ module.exports = function({ dictionary, options }) {
 // MARK: SwiftUI
 
 extension Color {
-    public static let element = ElementColorsSwiftUI()
+    public static let element = ElementColors()
 }
 
-public struct ElementColorsSwiftUI {\n` +
+public struct ElementColors {\n` +
   dictionary.allProperties.map(token => {
     if (token.attributes.category === `color`) {
       let value;
@@ -50,10 +50,11 @@ public struct ElementColorsSwiftUI {\n` +
 // MARK: UIKit
 
 extension UIColor {
-    public static let element = ElementColorsUIKit()
+    /// The colors from Compound, as dynamic colors that automatically update for light and dark mode.
+    public static let element = ElementUIColors()
 }
 
-public struct ElementColorsUIKit {\n` +
+@objcMembers public class ElementUIColors: NSObject {\n` +
 dictionary.allProperties.map(token => {
   if (token.attributes.category === `color`) {
     let value;

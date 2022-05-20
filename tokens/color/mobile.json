@@ -29,16 +29,6 @@
     "background": {
       "value": "{color.global.white.value}",
       "darkValue": "{color.global.black.800.value}"
-    },
-    "contentAndAvatars": [
-      "azure",
-      "grape",
-      "verde",
-      "polly",
-      "melon",
-      "aqua",
-      "prune",
-      "kiwi"
-    ]
+    }
   }
 }

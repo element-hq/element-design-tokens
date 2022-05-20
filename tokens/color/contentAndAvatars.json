@@ -1,0 +1,14 @@
+{
+  "color": {
+	  "contentAndAvatars": [
+      "color.global.azure",
+      "color.global.grape",
+      "color.global.verde",
+      "color.global.polly",
+      "color.global.melon",
+      "color.global.aqua",
+      "color.global.prune",
+      "color.global.kiwi"
+    ]
+  }
+}
