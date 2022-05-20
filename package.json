@@ -1,0 +1,10 @@
+{
+  "name": "ElementStyle",
+  "version": "0.0.1",
+  "devDependencies": {
+    "style-dictionary": "^3.7.0"
+  },
+  "scripts": {
+    "build": "node build.js"
+  }
+}
