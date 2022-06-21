@@ -1,14 +1,16 @@
 {
   "color": {
-	  "contentAndAvatars": [
-      "color.global.azure",
-      "color.global.grape",
-      "color.global.verde",
-      "color.global.polly",
-      "color.global.melon",
-      "color.global.aqua",
-      "color.global.prune",
-      "color.global.kiwi"
-    ]
+	  "contentAndAvatars": {
+      "value": [
+        { "value": "azure" },
+        { "value": "grape" },
+        { "value": "verde" },
+        { "value": "polly" },
+        { "value": "melon" },
+        { "value": "aqua" },
+        { "value": "prune" },
+        { "value": "kiwi" }
+      ]
+    }
   }
 }
