@@ -13,6 +13,8 @@ module.exports = {
     
     dictionary.allProperties
       .filter(token => token.attributes.category === `color` &&
+        token.attributes.type !== `contentAndAvatars` &&
+        // contentAndAvatars is an array of colors that shouldn't be included.
         (!dictionary.usesReference(token.original.value) || token.darkValue))
         // we only need colorsets for tokens that have a dark value or
         // are not a reference
