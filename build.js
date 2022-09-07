@@ -76,7 +76,7 @@ StyleDictionary.extend({
     },
     css: {
       transformGroup: 'css',
-      prefix: 'element',
+      prefix: 'cmp',
       buildPath: 'lib/css/',
       files: [
         {
@@ -87,7 +87,10 @@ StyleDictionary.extend({
               && token.attributes.type === `web`
               && token.attributes.item === `core`
           },
-          transformer: (token) => token.darkValue
+          // doesnt work
+          transformer: (token) => {
+            return token.darkValue;
+          }
         },
         {
           destination: '_colors-light.css',
