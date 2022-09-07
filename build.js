@@ -73,6 +73,44 @@ StyleDictionary.extend({
           outputReferences: true
         }
       }]
-    }
+    },
+    css: {
+      transformGroup: 'css',
+      prefix: 'element',
+      buildPath: 'lib/css/',
+      files: [
+        {
+          destination: '_colors-dark.css',
+          format: 'css/variables',
+          filter: (token) => {
+            return token.attributes.category === `color`
+              && token.attributes.type === `web`
+              && token.attributes.item === `core`
+          },
+          transformer: (token) => token.darkValue
+        },
+        {
+          destination: '_colors-light.css',
+          format: 'css/variables',
+          filter: (token) => {
+            return token.attributes.category === `color`
+              && token.attributes.type === `web`
+              && token.attributes.item === `core`
+          },
+        },
+        {
+          destination: '_colors.css',
+          format: 'css/variables',
+          filter: (token) => {
+            return token.attributes.category === `color`
+              && token.attributes.type === `web`
+              && token.attributes.item !== `core`
+          },
+          options: {
+            outputReferences: true
+          }
+        },
+      ],
+    },
   }
 }).buildAllPlatforms();
