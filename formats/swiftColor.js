@@ -29,11 +29,12 @@ module.exports = function({ dictionary, options }) {
 // MARK: SwiftUI
 
 extension Color {
-    public static let element = ElementColors()
-    public static let global = ElementColors.GlobalColors()
+    public static let global = CompoundColors.GlobalColors()
 }
 
-public struct ElementColors {\n` +
+public struct CompoundColors {
+    public init() { }
+\n` +
   mobileColors.map(token => {
     let value = swiftUIColor(token, dictionary, options)
     return `    public var ${itemName(token, options)}: Color { ${value} }`
@@ -56,12 +57,14 @@ public struct ElementColors {\n` +
 // MARK: UIKit
 
 extension UIColor {
-    /// The colors from Compound, as dynamic colors that automatically update for light and dark mode.
-    public static let element = ElementUIColors()
-    public static let global = ElementUIColors.GlobalColors()
+    public static let global = CompoundUIColors.GlobalColors()
 }
 
-@objcMembers public class ElementUIColors: NSObject {\n` +
+@objcMembers public class CompoundUIColors: NSObject {
+    public override init() {
+        super.init()
+    }
+\n` +
   mobileColors.map(token => {
     let value = uiKitColor(token, dictionary, options);
     return `    public var ${itemName(token, options)}: UIColor { ${value} }`

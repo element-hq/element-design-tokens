@@ -66,7 +66,7 @@ StyleDictionary.extend({
       buildPath: iosPath,
       transforms: [`attribute/cti`,`name/ti/camel`,`size/swift/remToCGFloat`],
       files: [{
-        destination: `ElementColors.swift`,
+        destination: `CompoundColors.swift`,
         format: `swiftColor`,
         filter: (token) => token.attributes.category === `color`,
         options: {

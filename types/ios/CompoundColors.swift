@@ -3,11 +3,12 @@ import SwiftUI
 // MARK: SwiftUI
 
 extension Color {
-    public static let element = ElementColors()
-    public static let global = ElementColors.GlobalColors()
+    public static let global = CompoundColors.GlobalColors()
 }
 
-public struct ElementColors {
+public struct CompoundColors {
+    public init() { }
+
     public var accent: Color { .global.elementGreen }
     public var alert: Color { .global.vermillon }
     public var links: Color { .global.links }
@@ -63,12 +64,14 @@ public struct ElementColors {
 // MARK: UIKit
 
 extension UIColor {
-    /// The colors from Compound, as dynamic colors that automatically update for light and dark mode.
-    public static let element = ElementUIColors()
-    public static let global = ElementUIColors.GlobalColors()
+    public static let global = CompoundUIColors.GlobalColors()
 }
 
-@objcMembers public class ElementUIColors: NSObject {
+@objcMembers public class CompoundUIColors: NSObject {
+    public override init() {
+        super.init()
+    }
+
     public var accent: UIColor { .global.elementGreen }
     public var alert: UIColor { .global.vermillon }
     public var links: UIColor { .global.links }
